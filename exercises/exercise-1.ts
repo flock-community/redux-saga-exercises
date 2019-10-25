@@ -4,7 +4,7 @@ function every(iterable, predicate) {
   }
 }
 
-test('every', () => {
+test('Exercise 1', () => {
   const string = 'lowercase';
   const set = new Set([2, 4, 6, 8]);
   const map = new Map([
