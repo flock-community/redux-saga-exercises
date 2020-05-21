@@ -9,6 +9,3 @@ test('Exercise 1', () => {
   expect([...range(0, 100, 25)]).toStrictEqual([0, 25, 50, 75, 100]);
 });
 
-interface Iterator<T> {
-  next(): { value: T; done: boolean };
-}
