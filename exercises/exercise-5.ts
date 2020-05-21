@@ -1,16 +1,11 @@
 import { naturals, takeWhile } from './utils';
 
 function* primes() {
-  for (const p of naturals(2)) {
-    if (isPrime(p)) yield p;
-  }
+  // implement
 }
 
 function isPrime(p: number) {
-  for (const n of takeWhile(naturals(2), (n) => n < p)) {
-    if (p % n === 0) return false;
-  }
-  return true;
+  // implement
 }
 
 test('Exercise 5', () => {

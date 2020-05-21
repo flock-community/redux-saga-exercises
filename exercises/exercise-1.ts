@@ -1,5 +1,5 @@
 function* range(start: number, stop: number, step: number = 1): Generator<number> {
-  for (let i = start; i <= stop; i += step) yield i;
+  // implement
 }
 
 test('Exercise 1', () => {

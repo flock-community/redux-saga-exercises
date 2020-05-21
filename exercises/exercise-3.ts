@@ -1,5 +1,5 @@
-function capitalize([first, ...rest]: Iterable<string>) {
-  return first.toUpperCase() + rest.join('');
+function capitalize(iterable: Iterable<string>) {
+  // implement
 }
 
 test('Exercise 3', () => {

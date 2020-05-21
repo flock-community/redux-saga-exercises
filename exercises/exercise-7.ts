@@ -24,20 +24,3 @@ function runGenerator(genObj) {
     }
   }
 }
-
-function runSaga(genFunc) {
-  const genObj = genFunc();
-  step(genObj.next());
-
-  function step({ value, done }) {
-    if (!done) {
-      value
-        .then((result) => {
-          step(genObj.next(result)); // (A)
-        })
-        .catch((error) => {
-          step(genObj.throw(error)); // (B)
-        });
-    }
-  }
-}

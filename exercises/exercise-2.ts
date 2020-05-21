@@ -1,11 +1,7 @@
 import { range } from './utils';
 
 function sum(iterator: Generator<number>) {
-  let sum = 0;
-  for (let result = iterator.next(); !result.done; result = iterator.next()) {
-    sum += result.value;
-  }
-  return sum;
+  // implement
 }
 
 test('Exercise 2', () => {

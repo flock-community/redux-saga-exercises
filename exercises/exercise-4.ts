@@ -1,10 +1,7 @@
 import { naturals, sequence } from './utils';
 
 function* takeWhile<T>(iterable: Generator<T>, predicate: (t: T) => boolean) {
-  for (const item of iterable) {
-    if (!predicate(item)) break;
-    yield item;
-  }
+  // implement
 }
 
 test('Exercise 4', () => {
