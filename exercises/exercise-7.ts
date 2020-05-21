@@ -1,16 +1,13 @@
 import { delay, primes } from './utils';
 
 function* logPrimeEndlessly() {
-  for (const item of primes()) {
-    yield item;
-    console.log(item);
-  }
+  // implement
 }
 
 test('Exercise 7', async () => {
   let primeGenerator = logPrimeEndlessly();
   runGenerator(primeGenerator);
-  await delay(2000);
+  await delay(50);
   // implement canceling the generator
   console.log(primeGenerator.return());
 });
@@ -18,9 +15,11 @@ test('Exercise 7', async () => {
 function runGenerator(genObj) {
   step(genObj.next());
 
-  function step({ value, done }) {
+  function step({ done }) {
     if (!done) {
-      setTimeout(() => step(genObj.next()), 0);
+      delay(0).then(() => {
+        step(genObj.next());
+      });
     }
   }
 }

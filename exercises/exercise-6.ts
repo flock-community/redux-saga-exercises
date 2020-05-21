@@ -1,16 +1,7 @@
 import { delay } from './utils';
 
 function runGenerator(genFunc) {
-  const genObj = genFunc();
-  step(genObj.next());
-
-  function step({ value, done }) {
-    if (!done) {
-      value.then(() => {
-        step(genObj.next());
-      });
-    }
-  }
+  // implement
 }
 test('Exercise 6', async () => {
   runGenerator(generatorFn);
