@@ -1,26 +1,14 @@
-function every(iterable, predicate) {
-  for (const item of iterable) {
-    // TODO
-  }
+function* range(start: number, stop: number, step: number = 1): Generator<number> {
+  for (let i = start; i <= stop; i += step) yield i;
 }
 
 test('Exercise 1', () => {
-  const string = 'lowercase';
-  const set = new Set([2, 4, 6, 8]);
-  const map = new Map([
-    [0, 'zero'],
-    [1, 'one'],
-    [2, 'two'],
-    [3, 'three'],
-    [4, 'four'],
-    [5, 'five'],
-  ]);
-
-  const isLowerCase = s => s.toLowerCase() === s;
-  const isEven = i => i % 2 === 0;
-  const isNumber = key => typeof key === 'number';
-
-  expect(every(string, isLowerCase)).toBe(true);
-  expect(every(set, isEven)).toBe(true);
-  expect(every(map, ([key]) => isNumber(key))).toBe(true);
+  expect([...range(1, 5)]).toStrictEqual([1, 2, 3, 4, 5]);
+  expect([...range(1, 5, 2)]).toStrictEqual([1, 3, 5]);
+  expect([...range(10, 30, 5)]).toStrictEqual([10, 15, 20, 25, 30]);
+  expect([...range(0, 100, 25)]).toStrictEqual([0, 25, 50, 75, 100]);
 });
+
+interface Iterator<T> {
+  next(): { value: T; done: boolean };
+}

@@ -1,6 +1,7 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 module.exports = {
+  testSequencer: './test-sequencer.js',
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -143,7 +144,7 @@ module.exports = {
   testMatch: [
     "**/__tests__/**/*.[jt]s?(x)",
     "**/?(*.)+(spec|test).[tj]s?(x)",
-    "**/exercises/**/*.[jt]s?(x)"
+    "**/exercises/exercise*.[jt]s?(x)"
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
@@ -160,6 +161,7 @@ module.exports = {
   // This option allows use of a custom test runner
   // testRunner: "jasmine2",
 
+  runInBand: true,
   // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
   // testURL: "http://localhost",
 

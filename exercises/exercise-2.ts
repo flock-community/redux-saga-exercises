@@ -1,11 +1,14 @@
-function sum(iterator: Iterator<number>) {
+import { range } from './utils';
+
+function sum(iterator: Generator<number>) {
   let sum = 0;
-  // some while loop that adds al the items of the iterator
+  for (let result = iterator.next(); !result.done; result = iterator.next()) {
+    sum += result.value;
+  }
   return sum;
 }
 
 test('Exercise 2', () => {
-  const set = new Set([1, 1, 2, 2, 3, 3]);
-  const iterator = set[Symbol.iterator]();
-  expect(sum(iterator)).toEqual(6);
+  expect(sum(range(0, 100, 25))).toEqual(250);
+  expect(sum(range(0, 10))).toEqual(55);
 });
