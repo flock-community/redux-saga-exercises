@@ -9,7 +9,6 @@ test('Exercise 7', async () => {
   runGenerator(primeGenerator);
   await delay(50);
   // implement canceling the generator
-  console.log(primeGenerator.return());
 });
 
 function runGenerator(genObj) {
